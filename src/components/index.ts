@@ -1,0 +1,10 @@
+export { default as Header } from './Header';
+export { default as Hero } from './Hero';
+export { default as About } from './About';
+export { default as Initiatives } from './Initiatives';
+export { default as Impact } from './Impact';
+export { default as Media } from './Media';
+export { default as Volunteer } from './Volunteer';
+export { default as Gallery } from './Gallery';
+export { default as Footer } from './Footer';
+export { Reveal } from './Reveal';
