@@ -2,10 +2,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const galleryImages = [
-  { alt: 'Students in classroom', category: 'Education' },
-  { alt: 'Community event', category: 'Community' },
-  { alt: 'Teacher training', category: 'Training' },
-  { alt: 'Cultural program', category: 'Culture' },
+  { alt: 'Students in classroom interaction', category: 'Education', src: '/images/centers/kotivakkam-2.jpg' },
+  { alt: 'Community gathering', category: 'Community', src: '/images/centers/kotivakkam-3.jpg' },
+  { alt: 'Teacher training session', category: 'Training', src: '/images/centers/neelankarai-1.jpg' },
+  { alt: 'Cultural program', category: 'Culture', src: '/images/centers/venkatamangalam-1.jpg' },
+  { alt: 'Classroom learning', category: 'Education', src: '/images/centers/kotivakkam-4.jpg' },
+  { alt: 'Student activities', category: 'Activities', src: '/images/centers/kotivakkam-5.jpg' },
+  { alt: 'Group study', category: 'Education', src: '/images/centers/kotivakkam-6.jpg' },
+  { alt: 'Learning together', category: 'Community', src: '/images/centers/neelankarai-2.jpg' },
+  { alt: 'Creative session', category: 'Arts', src: '/images/centers/neelankarai-3.jpg' },
+  { alt: 'Center overview', category: 'Campus', src: '/images/centers/kotivakkam-1.jpg' },
+  { alt: 'Village engagement', category: 'Outreach', src: '/images/centers/murugamangalam-1.jpg' },
 ];
 
 const Gallery = () => {
@@ -30,39 +37,36 @@ const Gallery = () => {
             Our <span className="italic text-[#2F3A8F]">Gallery</span>
           </h2>
           
-          <p className="text-[#5F6368] max-w-xl mx-auto text-base leading-relaxed">
+          <p className="text-[#374151] max-w-xl mx-auto text-base leading-relaxed">
             Glimpses from our journey—learning, growing, and building together.
           </p>
         </div>
         
         {/* Compact Uniform Grid - Single row on large screens */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {galleryImages.map((image, index) => (
+          {galleryImages.slice(0, 4).map((image, index) => (
             <div 
               key={index}
               className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
             >
-              {/* Gradient Placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#d8d4cc] via-[#c5c0b8] to-[#b8b2a8]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-[#5F6368]/40">
-                    <div className="w-10 h-10 mx-auto mb-2 rounded-full border border-dashed border-current flex items-center justify-center bg-white/10 backdrop-blur-sm">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <span className="text-[10px] font-medium uppercase tracking-wider">{image.category}</span>
-                  </div>
-                </div>
+              {/* Image */}
+              <div className="absolute inset-0">
+                 <Image
+                   src={image.src}
+                   alt={image.alt}
+                   fill
+                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                 />
+                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
               </div>
               
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2F3A8F]/90 via-[#2F3A8F]/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+              {/* Gradient Overlay - Always visible at bottom for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300" />
               
-              {/* Hover Content */}
-              <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                <span className="text-[#B08968] text-[10px] font-medium uppercase tracking-widest mb-1">{image.category}</span>
-                <p className="text-white text-base font-serif font-medium">{image.alt}</p>
+              {/* Content - Always visible */}
+              <div className="absolute inset-0 flex flex-col justify-end p-5 translate-y-0 transition-all duration-500">
+                <span className="text-[#fbbf24] text-[10px] font-bold uppercase tracking-widest mb-1 relative z-10 drop-shadow-sm">{image.category}</span>
+                <p className="text-white text-base font-serif font-medium relative z-10 drop-shadow-md">{image.alt}</p>
               </div>
             </div>
           ))}

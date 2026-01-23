@@ -1,186 +1,167 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        {/* Simple Elegant Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F4F1EC] via-[#EDE9E3] to-[#E5E0D8]" />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F4F1EC] pt-32 pb-16 lg:py-0">
+      {/* Background Pattern - Architectural Grid */}
+      <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none" 
+           style={{ 
+             backgroundImage: 'linear-gradient(#2E2E33 1px, transparent 1px), linear-gradient(90deg, #2E2E33 1px, transparent 1px)', 
+             backgroundSize: '100px 100px' 
+           }}>
       </div>
       
-      {/* Decorative Rotating Spiral/Circles - Increased Visibility & Animation */}
-      <motion.div 
-        animate={{ rotate: 360 }}
-        transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
-        className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] opacity-[0.15]" // Increased opacity
-      >
-        <svg viewBox="0 0 200 200" className="w-full h-full">
-          <circle cx="100" cy="100" r="90" fill="none" stroke="#2F3A8F" strokeWidth="0.3" strokeDasharray="4 4" /> {/* Outer dashed */}
-          <circle cx="100" cy="100" r="80" fill="none" stroke="#2F3A8F" strokeWidth="0.5" />
-          <circle cx="100" cy="100" r="60" fill="none" stroke="#2F3A8F" strokeWidth="0.5" />
-          <circle cx="100" cy="100" r="40" fill="none" stroke="#2F3A8F" strokeWidth="0.5" />
-          <circle cx="100" cy="100" r="20" fill="none" stroke="#2F3A8F" strokeWidth="0.5" />
-          {/* Spiral-like accents */}
-          <path d="M100,100 m-70,0 a70,70 0 1,0 140,0 a70,70 0 1,0 -140,0" fill="none" stroke="#B08968" strokeWidth="0.2" opacity="0.5" />
-        </svg>
-      </motion.div>
+      {/* Decorative Gradients - Softer */}
+      <div className="absolute bottom-0 left-0 w-[300px] lg:w-[600px] h-[300px] lg:h-[600px] bg-gradient-to-tr from-[#B08968]/15 to-transparent rounded-full blur-[60px] lg:blur-[100px] opacity-60" />
+      <div className="absolute top-0 right-0 w-[300px] lg:w-[500px] h-[300px] lg:h-[500px] bg-gradient-to-bl from-[#2F3A8F]/10 to-transparent rounded-full blur-[60px] lg:blur-[80px] opacity-50" />
 
-      {/* Counter-rotating Element for depth */}
-       <motion.div 
-        animate={{ rotate: -360 }}
-        transition={{ duration: 200, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] opacity-[0.1]"
-      >
-         <svg viewBox="0 0 200 200" className="w-full h-full">
-          <circle cx="100" cy="100" r="70" fill="none" stroke="#3A7F7A" strokeWidth="0.4" strokeDasharray="8 8" />
-          <circle cx="100" cy="100" r="50" fill="none" stroke="#3A7F7A" strokeWidth="0.4" />
-        </svg>
-      </motion.div>
-      
-      {/* Decorative Lines - Consistent with Theme */}
-      <div className="absolute left-0 top-1/3 w-32 h-px bg-gradient-to-r from-transparent via-[#2F3A8F]/30 to-transparent" />
-      <div className="absolute right-0 top-2/3 w-32 h-px bg-gradient-to-r from-transparent via-[#3A7F7A]/30 to-transparent" />
-      
-      {/* Floating Decorative Elements - Glowing Orbs */}
-      <motion.div 
-        animate={{ y: [0, -20, 0], opacity: [0.4, 0.7, 0.4] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 left-20 w-3 h-3 bg-[#B08968] rounded-full blur-[2px]" 
-      />
-      <motion.div 
-        animate={{ y: [0, 20, 0], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-1/3 right-32 w-4 h-4 bg-[#2F3A8F] rounded-full blur-[2px]" 
-      />
-      
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        {/* Decorative Pre-title */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex items-center justify-center gap-4 mb-8"
-        >
-          <div className="w-12 h-px bg-gradient-to-r from-transparent to-[#B08968]" />
-          <span className="text-[#B08968] text-sm tracking-[0.3em] uppercase font-medium">
-            An Initiative for Meaningful Education
-          </span>
-          <div className="w-12 h-px bg-gradient-to-l from-transparent to-[#B08968]" />
-        </motion.div>
-        
-        {/* Main Headline */}
-        <div className="mb-8">
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-medium text-[#2E2E33] leading-[1.1] tracking-tight">
-            <motion.span 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="inline-block"
-            >
-                Nurturing
-            </motion.span>{' '}
-            <motion.span 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="italic text-[#2F3A8F] inline-block"
-            >
-                Minds
-            </motion.span>,
-            <br />
-            <motion.span 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="inline-block"
-            >
-                Cultivating
-            </motion.span>{' '}
-            <motion.span 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="italic text-[#3A7F7A] inline-block"
-            >
-                Values
-            </motion.span>
-            </h1>
-        </div>
-        
-        {/* Elegant Divider */}
-        <motion.div 
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="flex items-center justify-center gap-3 mb-8"
-        >
-          <div className="w-8 h-px bg-[#2E2E33]/30" />
-          <div className="w-2 h-2 rotate-45 border border-[#B08968]/60" />
-          <div className="w-8 h-px bg-[#2E2E33]/30" />
-        </motion.div>
-        
-        {/* Subtitle */}
-        <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.2 }}
-            className="text-lg md:text-xl text-[#4A4A4F] max-w-2xl mx-auto mb-12 leading-relaxed"
-        >
-          Vidyabhyasam is a thoughtful initiative dedicated to fostering 
-          <span className="text-[#2E2E33] font-medium"> holistic education </span>
-          and 
-          <span className="text-[#2E2E33] font-medium"> timeless values </span>
-          for meaningful living.
-        </motion.p>
-        
-        {/* CTA Buttons */}
-        <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-        >
-          <Link 
-            href="#about"
-            className="group relative px-10 py-4 bg-[#2F3A8F] text-white text-sm font-medium tracking-wide rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-[#2F3A8F]/25 hover:-translate-y-0.5"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              Explore Vidyabhyasam
-              <svg 
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#252d6e] to-[#2F3A8F] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          </Link>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full flex flex-col justify-center min-h-[inherit]">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center mt-10 lg:mt-0">
           
-          <Link 
-            href="/about"
-            className="group px-10 py-4 text-[#2E2E33] text-sm font-medium tracking-wide border-2 border-[#2E2E33]/25 rounded-full hover:border-[#2F3A8F] hover:text-[#2F3A8F] transition-all duration-300 hover:-translate-y-0.5"
-          >
-            Learn Our Story
-          </Link>
-        </motion.div>
-        
-        {/* Scroll Indicator */}
-        <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2 }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-xs text-[#5F6368] tracking-widest uppercase">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-[#5F6368] to-transparent animate-pulse" />
-        </motion.div>
+          {/* Left Content - Text */}
+          <div className="text-left relative z-20 order-1 lg:order-none">
+             {/* Decorative Element - Circle */}
+            <motion.div 
+               initial={{ scale: 0 }}
+               animate={{ scale: 1 }}
+               transition={{ duration: 0.8 }}
+               className="absolute top-0 -left-4 lg:-top-4 lg:-left-6 w-12 h-12 lg:w-16 lg:h-16 bg-[#B08968]/20 rounded-full blur-xl" 
+            />
+
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="flex items-center gap-4 mb-4 lg:mb-6 relative z-10"
+            >
+              <div className="w-8 lg:w-12 h-[2px] bg-[#B08968]" />
+              <span className="font-serif text-[#2F3A8F] text-sm lg:text-lg tracking-[0.2em] uppercase font-bold">
+                VIDYABHYASAM
+              </span>
+            </motion.div>
+            
+            <h1 className="font-serif text-3xl md:text-5xl lg:text-5xl xl:text-7xl font-bold text-[#2E2E33] leading-[1.1] mb-6 tracking-tight relative z-10">
+              Enriching communities with<br />
+              <span className="text-[#2F3A8F] relative inline-block mt-1 lg:mt-2">
+                <span className="relative z-10">
+                  <motion.span 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      className="inline-block"
+                  >
+                      Food
+                  </motion.span>,{' '}
+                  <motion.span 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.6 }}
+                      className="inline-block"
+                  >
+                      Education
+                  </motion.span>
+                </span>
+                
+                <span className="text-[#B08968] font-light mx-2">&</span>
+                
+                <span className="relative z-10">
+                   <motion.span 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.8 }}
+                      className="inline-block"
+                  >
+                      Values
+                  </motion.span>
+                </span>
+                
+                {/* Underline Decoration */}
+                <div className="absolute bottom-1 lg:bottom-2 left-0 w-full h-2 lg:h-3 bg-[#B08968]/20 -z-0 skew-x-12" />
+              </span>
+            </h1>
+            
+            <motion.p 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1 }}
+                className="text-base md:text-lg lg:text-xl text-[#5F6368] mb-8 lg:mb-10 leading-relaxed font-sans max-w-lg relative z-10"
+            >
+              VIDYABHYASAM is empowering underprivileged children from rural areas by providing them with post-school free education, food and values.
+            </motion.p>
+            
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                className="flex flex-wrap gap-4 lg:gap-6 items-center relative z-10"
+            >
+              <a 
+                href="https://aikyavidya.org/donations/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-primary text-sm lg:text-lg px-6 lg:px-8 py-3 lg:py-4 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+              >
+                Donate Now
+              </a>
+              <Link href="/about" className="group flex items-center gap-2 text-[#2F3A8F] font-bold uppercase tracking-wider text-xs lg:text-sm">
+                <span className="border-b-2 border-[#2F3A8F]/30 group-hover:border-[#2F3A8F] transition-colors pb-1">Learn More</span>
+                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Right Content - Optimized Image Positioning */}
+          <div className="relative h-full flex items-center justify-center lg:justify-end order-2 lg:order-none mt-4 lg:mt-0">
+             <motion.div
+               initial={{ opacity: 0, x: 20 }}
+               animate={{ opacity: 1, x: 0 }}
+               transition={{ duration: 1, delay: 0.2 }}
+               className="relative w-full max-w-[300px] md:max-w-md lg:max-w-md xl:max-w-lg aspect-[3.5/4] z-10"
+             >
+                {/* Back Frame - Solid & Aligned */}
+                <div className="absolute inset-0 border-2 border-[#B08968] rounded-2xl transform translate-x-3 lg:translate-x-4 translate-y-3 lg:translate-y-4 z-0" />
+                
+                {/* Main Image Card */}
+                <div className="relative h-full w-full bg-white p-2 shadow-2xl rounded-2xl z-10 overflow-hidden">
+                   <div className="relative h-full w-full rounded-xl overflow-hidden">
+                      <Image 
+                        src="/images/hero-bg.jpg" 
+                        alt="Children learning"
+                        fill
+                        className="object-cover"
+                        priority
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1c]/80 via-transparent to-transparent opacity-90" />
+                      
+                      {/* Quote on Image - Simplified */}
+                      <div className="absolute bottom-0 left-0 w-full p-4 lg:p-8 text-white">
+                         <div className="w-8 h-1 bg-[#B08968] mb-2 lg:mb-3" />
+                         <p className="font-serif text-lg lg:text-3xl italic leading-tight mb-1">"Nurturing Minds"</p>
+                         <p className="text-[10px] lg:text-xs uppercase tracking-widest opacity-80 font-medium">Building Futures</p>
+                      </div>
+                   </div>
+                </div>
+             </motion.div>
+          </div>
+          
+        </div>
       </div>
+      
+      {/* Scroll Down Indicator - Hidden on Mobile */}
+      <motion.div 
+         initial={{ opacity: 0 }}
+         animate={{ opacity: 1 }}
+         transition={{ delay: 1.5, duration: 1 }}
+         className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex-col items-center gap-2 z-20 hidden lg:flex"
+      >
+         <span className="text-[9px] uppercase tracking-[0.2em] text-[#5F6368] font-bold">Scroll</span>
+         <div className="w-[1px] h-8 bg-gradient-to-b from-[#2E2E33] to-transparent" />
+      </motion.div>
     </section>
   );
 };

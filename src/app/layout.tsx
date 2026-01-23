@@ -1,25 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond, EB_Garamond } from "next/font/google";
+import { Lora, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
   display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const ebGaramond = EB_Garamond({
-  variable: "--font-eb-garamond",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -42,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${cormorant.variable} ${ebGaramond.variable} antialiased`}
+        className={`${lora.variable} ${playfair.variable} antialiased`}
       >
         {children}
       </body>

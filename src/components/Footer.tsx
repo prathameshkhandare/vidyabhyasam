@@ -1,83 +1,80 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer = () => {
   const footerLinks = {
     explore: [
       { name: 'About Us', href: '/about' },
-      { name: 'Initiatives', href: '/initiatives' },
-      { name: 'Our Impact', href: '/impact' },
-      { name: 'Media', href: '/media' },
+      { name: 'Our Inspiration', href: '/about/inspiration' },
+      { name: 'Our Trust', href: '/about/trust' },
+      { name: 'Governance', href: '/about/governance' },
+    ],
+    initiatives: [
+      { name: 'Food', href: '/initiatives/food' },
+      { name: 'Education', href: '/initiatives/education' },
+      { name: 'Values', href: '/initiatives/values' },
+      { name: 'CSR Applicability', href: '/csr' },
+      { name: 'CSR Partners', href: '/partners' },
     ],
     connect: [
       { name: 'Become a Volunteer', href: '/volunteer' },
-      { name: 'Support the Vision', href: '/support' },
+      { name: 'Media Presence', href: '/media' },
       { name: 'Gallery', href: '/gallery' },
       { name: 'Contact', href: '/contact' },
     ],
   };
 
-  return (
-    <footer className="relative bg-[#1a1a1d] text-white overflow-hidden border-t border-[#B08968]/20">
-      {/* Decorative Top Gradient */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2F3A8F] via-[#3A7F7A] to-[#B08968]" />
-      
-      {/* Subtle Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-        backgroundSize: '32px 32px'
-      }} />
+  const associatedTrusts = [
+    { name: 'Akshaya Patra', href: '#' },
+    { name: 'Hare Krishna Charities', href: '#' },
+    { name: 'Hare Krishna Movement', href: '#' },
+  ];
 
-      {/* Decorative Glow */}
-      <div className="absolute top-[-100px] right-[-100px] w-64 h-64 bg-[#B08968]/10 rounded-full blur-[80px]" />
-      
+  return (
+    <footer className="relative bg-[#1a1a1c] text-[#F4F1EC] overflow-hidden border-t border-[#B08968]/30">
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-12">
-        {/* Top Section */}
         <div className="grid md:grid-cols-12 gap-12 mb-16">
-          {/* Brand */}
-          <div className="md:col-span-5">
-            {/* Logo */}
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shadow-inner">
-                <span className="font-serif text-2xl text-[#B08968] font-bold">V</span>
-              </div>
-              <div>
-                <h3 className="font-serif text-3xl font-medium text-white tracking-wide">
-                  Vidyabhyasam
-                </h3>
-                <span className="text-xs text-[#B08968] tracking-[0.25em] uppercase font-medium">
-                  Education with Purpose
-                </span>
-              </div>
-            </div>
-            
-            <p className="text-gray-300 leading-relaxed max-w-sm mb-8 font-light text-lg">
-              An initiative dedicated to nurturing minds with knowledge that matters 
-              and values that last. Education rooted in wisdom and purpose for a 
-              meaningful life.
-            </p>
-            
-            {/* Quote */}
-            <div className="border-l-2 border-[#B08968]/60 pl-6 py-1">
-              <p className="font-serif italic text-white/90 text-lg">
-                "Where learning transforms into living"
-              </p>
-            </div>
+          {/* Brand & Contact */}
+          <div className="md:col-span-4">
+             <div className="mb-8">
+                <div className="relative w-20 h-20 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shadow-inner overflow-hidden p-2 mb-4">
+                   <Image 
+                     src="/images/vidyabhyasam-logo.png" 
+                     alt="Vidyabhyasam Logo" 
+                     fill
+                     className="object-contain"
+                   />
+                </div>
+                <h3 className="font-serif text-3xl font-bold text-white mb-2">VIDYABHYASAM</h3>
+                <p className="text-[#B08968] text-xs tracking-[0.2em] uppercase">Enriching Communities</p>
+             </div>
+             
+             <div className="space-y-4 text-gray-400 font-light mb-8">
+               <p className="leading-relaxed">
+                 NBT Nagar, Road No 12, Banjara Hills,<br/>
+                 Near Anti Corruption Bureau office,<br/>
+                 Hyderabad - 500034
+               </p>
+               <p><a href="mailto:connect@vidyabhyasam.org" className="hover:text-white transition-colors">connect@vidyabhyasam.org</a></p>
+               <p><a href="tel:+917386898991" className="hover:text-white transition-colors">+91 73868 98991</a></p>
+             </div>
+             
+             <div className="flex gap-4">
+                {['Instagram', 'Facebook', 'YouTube', 'Twitter'].map(social => (
+                  <a key={social} href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#B08968] transition-colors" aria-label={social}>
+                    <span className="text-xs">{social[0]}</span>
+                  </a>
+                ))}
+             </div>
           </div>
           
-          {/* Links */}
-          <div className="md:col-span-3 md:col-start-7">
-            <h4 className="text-[#B08968] text-sm font-bold tracking-[0.2em] uppercase mb-8 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#B08968]"></span>
-              Explore
-            </h4>
-            <ul className="space-y-5">
+          {/* Quick Links */}
+          <div className="md:col-span-2 md:col-start-6">
+            <h4 className="text-white font-bold uppercase tracking-wider mb-6 text-sm border-b border-[#B08968]/30 pb-2 inline-block">Quick Links</h4>
+            <ul className="space-y-3">
               {footerLinks.explore.map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-all duration-300 text-base flex items-center gap-3 group hover:translate-x-1"
-                  >
-                    <span className="w-1.5 h-px bg-[#B08968] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <Link href={link.href} className="text-gray-300 hover:text-[#B08968] transition-colors text-sm">
                     {link.name}
                   </Link>
                 </li>
@@ -85,56 +82,42 @@ const Footer = () => {
             </ul>
           </div>
           
-          <div className="md:col-span-3">
-            <h4 className="text-[#B08968] text-sm font-bold tracking-[0.2em] uppercase mb-8 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#B08968]"></span>
-              Connect
-            </h4>
-            <ul className="space-y-5">
-              {footerLinks.connect.map((link) => (
+          {/* Initiatives */}
+          <div className="md:col-span-2">
+            <h4 className="text-white font-bold uppercase tracking-wider mb-6 text-sm border-b border-[#B08968]/30 pb-2 inline-block">Initiatives</h4>
+            <ul className="space-y-3">
+              {footerLinks.initiatives.map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-all duration-300 text-base flex items-center gap-3 group hover:translate-x-1"
-                  >
-                    <span className="w-1.5 h-px bg-[#B08968] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <Link href={link.href} className="text-gray-300 hover:text-[#B08968] transition-colors text-sm">
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-        </div>
-        
-        {/* Newsletter / CTA Section */}
-        <div className="py-12 border-y border-white/5 mb-10 bg-white/[0.02] rounded-2xl px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div>
-              <h4 className="font-serif text-2xl text-white mb-2">Stay Connected</h4>
-              <p className="text-gray-400">Receive updates on our initiatives and stories of impact.</p>
-            </div>
-            <Link 
-              href="/contact"
-              className="px-10 py-4 bg-[#B08968] text-white font-medium rounded-full hover:bg-[#9a7657] transition-all duration-300 shadow-lg shadow-[#B08968]/20 hover:shadow-[#B08968]/40 hover:-translate-y-0.5"
-            >
-              Get in Touch
-            </Link>
+          
+          {/* Associated Trusts */}
+          <div className="md:col-span-2">
+            <h4 className="text-white font-bold uppercase tracking-wider mb-6 text-sm border-b border-[#B08968]/30 pb-2 inline-block">Associated Trusts</h4>
+            <ul className="space-y-3">
+               {associatedTrusts.map(trust => (
+                 <li key={trust.name}>
+                   <a href={trust.href} className="text-gray-300 hover:text-[#B08968] transition-colors text-sm">
+                     {trust.name}
+                   </a>
+                 </li>
+               ))}
+            </ul>
           </div>
         </div>
         
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
-          <p>
-            © {new Date().getFullYear()} Vidyabhyasam. All rights reserved.
-          </p>
-          
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 px-4 py-1 rounded-full bg-white/5 border border-white/5">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              <p className="italic text-gray-400">
-                Education rooted in wisdom
-              </p>
-            </div>
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+          <p>© {new Date().getFullYear()} Vidyabhyasam. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white">Terms & Conditions</a>
+            <a href="#" className="hover:text-white">Privacy Policy</a>
+            <a href="#" className="hover:text-white">Refund Policy</a>
           </div>
         </div>
       </div>

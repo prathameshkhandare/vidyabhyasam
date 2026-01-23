@@ -9,6 +9,8 @@ import {
   Gallery,
   Footer,
   Reveal,
+  PurposeVision,
+  Centers,
 } from "@/components";
 
 export default function Home() {
@@ -17,10 +19,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Reveal><About /></Reveal>
-        <Reveal><Initiatives /></Reveal>
+        <Reveal><About /></Reveal> {/* Mission Snapshot */}
         <Reveal><Impact /></Reveal>
-        <Reveal><Media /></Reveal>
+        <Reveal><Initiatives /></Reveal>
+        <Reveal><PurposeVision /></Reveal>
+        <Reveal><Media /></Reveal> {/* Video & Testimonials */}
+        <Reveal><Centers /></Reveal>
         <Reveal><Volunteer /></Reveal>
         <Reveal><Gallery /></Reveal>
       </main>

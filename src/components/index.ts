@@ -7,4 +7,6 @@ export { default as Media } from './Media';
 export { default as Volunteer } from './Volunteer';
 export { default as Gallery } from './Gallery';
 export { default as Footer } from './Footer';
+export { default as PurposeVision } from './PurposeVision';
+export { default as Centers } from './Centers';
 export { Reveal } from './Reveal';
