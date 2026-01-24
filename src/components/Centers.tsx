@@ -1,93 +1,137 @@
 'use client';
 
+import { useRef } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 
 const centers = [
   {
     name: 'Neelankarai',
     location: 'Chennai, Tamil Nadu',
     image: '/images/centers/neelankarai-1.jpg',
-    description: 'A vibrant center of learning and growth.'
+    description: 'A vibrant center of learning and growth.',
+    color: '#B08968'
   },
   {
     name: 'Venkatamangalam',
     location: 'Kanchipuram District',
     image: '/images/centers/venkatamangalam-1.jpg',
-    description: 'Nurturing young minds in a serene environment.'
+    description: 'Nurturing young minds in a serene environment.',
+    color: '#2F3A8F'
   },
   {
     name: 'Kotivakkam',
     location: 'Chennai Region',
-    image: '/images/centers/kotivakkam-1.jpg', // Using the first distinct image
-    description: 'Empowering children with holistic education.'
+    image: '/images/centers/kotivakkam-1.jpg',
+    description: 'Empowering children with holistic education.',
+    color: '#B08968'
   },
   {
     name: 'Murugamangalam',
     location: 'Rural Community',
     image: '/images/centers/murugamangalam-1.jpg',
-    description: 'Building strong foundations for the future.'
+    description: 'Building strong foundations for the future.',
+    color: '#2F3A8F'
   }
 ];
 
-const Centers = () => {
+const Card = ({
+  i,
+  center,
+  progress,
+  range,
+  targetScale,
+}: {
+  i: number;
+  center: any;
+  progress: MotionValue<number>;
+  range: number[];
+  targetScale: number;
+}) => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start end', 'start start']
+  });
+
+  const scale = useTransform(progress, range, [1, targetScale]);
+  
   return (
-    <section className="relative py-28 bg-white overflow-hidden">
+    <div ref={container} className="h-[50vh] flex items-center justify-center sticky top-0">
+      <motion.div
+        style={{
+          scale,
+          top: `calc(10vh + ${i * 20}px)`, // Added a small staggered gap as requested
+          zIndex: (centers.length + i) * 10, // Higher specificity z-index
+        }}
+        className="relative h-[450px] md:h-[550px] w-full max-w-5xl rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] origin-top mx-4 md:mx-6 border border-white/10 bg-[#0F172A]"
+      >
+         {/* Original Card Design Structure: Image Background + Overlay */}
+         <div className="absolute inset-0">
+           <Image 
+             src={center.image} 
+             alt={center.name}
+             fill
+             className="object-cover transition-transform duration-1000 group-hover:scale-105"
+           />
+           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-black/40 to-transparent opacity-95 transition-opacity duration-300" />
+         </div>
+         
+         {/* Content Overlay */}
+         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-10 text-white" >
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-[#FFD700] text-sm font-bold uppercase tracking-[0.2em] mb-4 block drop-shadow-md"
+            >
+              {center.location}
+            </motion.span>
+            <h3 className="font-serif text-3xl md:text-5xl font-bold mb-6 !text-white leading-tight">{center.name}</h3>
+            <p className="text-white/80 text-base md:text-xl leading-relaxed max-w-2xl font-light">
+              {center.description}
+            </p>
+         </div>
+      </motion.div>
+    </div>
+  );
+};
 
+const Centers = () => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end end']
+  });
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <div className="flex items-center justify-center gap-3 mb-6">
+  return (
+    <section className="relative bg-[#F4F1EC] pb-6" ref={container}>
+      <div className="pt-8 px-6 max-w-7xl mx-auto text-center mb-2">
+          <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-px bg-[#B08968]" />
             <span className="text-[#B08968] text-xs font-medium tracking-[0.25em] uppercase">
-              Our Presence
+              Our Locations
             </span>
             <div className="w-8 h-px bg-[#B08968]" />
           </div>
-          
-          <h2 className="font-serif text-4xl md:text-5xl font-medium text-[#2E2E33] mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-[#2E2E33]">
             Our <span className="italic text-[#2F3A8F]">Centers</span>
           </h2>
-          
-          <p className="text-[#374151] max-w-2xl mx-auto text-lg">
-            Spreading the light of knowledge across communities.
-          </p>
-        </div>
+      </div>
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-           {centers.map((center, index) => (
-             <motion.div 
-               key={index}
-               initial={{ opacity: 0, y: 30 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.5, delay: index * 0.1 }}
-               className="group relative h-[400px] rounded-2xl overflow-hidden shadow-lg cursor-pointer"
-             >
-               {/* Image */}
-               <div className="absolute inset-0">
-                 <Image 
-                   src={center.image} 
-                   alt={center.name}
-                   fill
-                   className="object-cover transition-transform duration-700 group-hover:scale-110"
-                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300" />
-              </div>
-               
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 z-10 text-white" >
-                 <span className="text-[#fbbf24] text-xs font-bold uppercase tracking-wider mb-2 block drop-shadow-md">{center.location}</span>
-                 <h3 className="!text-white font-serif text-2xl font-medium mb-2 drop-shadow-lg">{center.name}</h3>
-                 <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-300 opacity-0 group-hover:opacity-100">
-                   <p className="text-white text-sm leading-relaxed mt-2 font-medium drop-shadow-md">{center.description}</p>
-                 </div>
-              </div>
-             </motion.div>
-           ))}
-        </div>
+      <div className="mt-2 pb-4">
+        {centers.map((center, i) => {
+          const targetScale = 1 - ((centers.length - i) * 0.08);
+          return (
+            <Card
+              key={i}
+              i={i}
+              center={center}
+              progress={scrollYProgress}
+              range={[i * 0.25, 1]}
+              targetScale={targetScale}
+            />
+          );
+        })}
       </div>
     </section>
   );

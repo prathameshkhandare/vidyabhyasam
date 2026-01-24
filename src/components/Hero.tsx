@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F4F1EC] pt-32 pb-16 lg:py-0">
+    <section className="relative min-h-fit lg:min-h-screen flex items-start lg:items-center overflow-hidden bg-[#F4F1EC] pt-20 lg:pt-0 pb-12 lg:py-0">
       {/* Background Pattern - Architectural Grid */}
       <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none" 
            style={{ 
@@ -19,11 +19,11 @@ const Hero = () => {
       <div className="absolute bottom-0 left-0 w-[300px] lg:w-[600px] h-[300px] lg:h-[600px] bg-gradient-to-tr from-[#B08968]/15 to-transparent rounded-full blur-[60px] lg:blur-[100px] opacity-60" />
       <div className="absolute top-0 right-0 w-[300px] lg:w-[500px] h-[300px] lg:h-[500px] bg-gradient-to-bl from-[#2F3A8F]/10 to-transparent rounded-full blur-[60px] lg:blur-[80px] opacity-50" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full flex flex-col justify-center min-h-[inherit]">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center mt-10 lg:mt-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full flex flex-col justify-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:mt-0">
           
           {/* Left Content - Text */}
-          <div className="text-left relative z-20 order-1 lg:order-none">
+          <div className="text-left relative z-20 order-2 lg:order-none">
              {/* Decorative Element - Circle */}
             <motion.div 
                initial={{ scale: 0 }}
@@ -36,7 +36,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="flex items-center gap-4 mb-4 lg:mb-6 relative z-10"
+              className="hidden lg:flex items-center gap-4 mb-4 lg:mb-6 relative z-10"
             >
               <motion.div 
                 className="font-serif text-sm lg:text-lg tracking-[0.2em] font-bold relative overflow-hidden"
@@ -138,7 +138,7 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Optimized Image Positioning */}
-          <div className="relative h-full flex items-center justify-center lg:justify-end order-2 lg:order-none mt-4 lg:mt-0">
+          <div className="relative h-full flex items-center justify-center lg:justify-end order-1 lg:order-none mt-4 lg:mt-0">
              <motion.div
                initial={{ opacity: 0, x: 20 }}
                animate={{ opacity: 1, x: 0 }}

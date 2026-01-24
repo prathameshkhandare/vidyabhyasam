@@ -81,7 +81,7 @@ const Header = () => {
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-4 group">
-              <div className="relative w-16 h-16 transition-transform duration-300 group-hover:scale-105">
+              <div className="relative w-12 h-12 lg:w-16 lg:h-16 transition-transform duration-300 group-hover:scale-105">
                  <Image 
                    src="/images/vidyabhyasam-logo.png" 
                    alt="Vidyabhyasam Logo" 

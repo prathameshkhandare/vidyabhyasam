@@ -24,7 +24,7 @@ export default function Home() {
         <Reveal><Initiatives /></Reveal>
         <Reveal><PurposeVision /></Reveal>
         <Reveal><Media /></Reveal> {/* Video & Testimonials */}
-        <Reveal><Centers /></Reveal>
+        <Centers />
         <Reveal><Volunteer /></Reveal>
         <Reveal><Gallery /></Reveal>
       </main>
