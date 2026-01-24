@@ -38,10 +38,33 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="flex items-center gap-4 mb-4 lg:mb-6 relative z-10"
             >
-              <div className="w-8 lg:w-12 h-[2px] bg-[#B08968]" />
-              <span className="font-serif text-[#2F3A8F] text-sm lg:text-lg tracking-[0.2em] uppercase font-bold">
-                VIDYABHYASAM
-              </span>
+              <motion.div 
+                className="font-serif text-sm lg:text-lg tracking-[0.2em] font-bold relative overflow-hidden"
+              >
+                <span className="sr-only">Vidyabhyasam</span>
+                <motion.span 
+                  initial="hidden"
+                  animate="visible"
+                  variants={{
+                    visible: { transition: { staggerChildren: 0.1 } },
+                    hidden: {}
+                  }}
+                  aria-hidden
+                >
+                  {"Vidyabhyasam".split("").map((char, index) => (
+                    <motion.span
+                      key={index}
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0 }
+                      }}
+                      className="inline-block bg-gradient-to-r from-[#2F3A8F] via-[#B08968] to-[#2F3A8F] bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent transform hover:scale-110 transition-transform cursor-default"
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </motion.span>
+              </motion.div>
             </motion.div>
             
             <h1 className="font-serif text-3xl md:text-5xl lg:text-5xl xl:text-7xl font-bold text-[#2E2E33] leading-[1.1] mb-6 tracking-tight relative z-10">
@@ -90,7 +113,7 @@ const Hero = () => {
                 transition={{ duration: 1, delay: 1 }}
                 className="text-base md:text-lg lg:text-xl text-[#5F6368] mb-8 lg:mb-10 leading-relaxed font-sans max-w-lg relative z-10"
             >
-              VIDYABHYASAM is empowering underprivileged children from rural areas by providing them with post-school free education, food and values.
+              Vidyabhyasam is empowering underprivileged children from rural areas by providing them with post-school free education, food and values.
             </motion.p>
             
             <motion.div 
@@ -122,8 +145,8 @@ const Hero = () => {
                transition={{ duration: 1, delay: 0.2 }}
                className="relative w-full max-w-[300px] md:max-w-md lg:max-w-md xl:max-w-lg aspect-[3.5/4] z-10"
              >
-                {/* Back Frame - Solid & Aligned */}
-                <div className="absolute inset-0 border-2 border-[#B08968] rounded-2xl transform translate-x-3 lg:translate-x-4 translate-y-3 lg:translate-y-4 z-0" />
+                {/* Back Frame - Soft Glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#B08968]/20 to-[#2F3A8F]/20 rounded-2xl transform translate-x-3 lg:translate-x-4 translate-y-3 lg:translate-y-4 z-0 blur-md" />
                 
                 {/* Main Image Card */}
                 <div className="relative h-full w-full bg-white p-2 shadow-2xl rounded-2xl z-10 overflow-hidden">
