@@ -60,14 +60,14 @@ const Volunteer = () => {
                 Walk With Us
             </motion.h2>
             
-            <motion.p 
+            <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
                 className="text-lg md:text-xl text-[#4B5563] max-w-3xl mx-auto font-light leading-relaxed font-sans"
             >
-                A spiritual journey of devotion and service.
+                <p>A spiritual journey of devotion and service.</p>
                 <div className="mt-4 flex justify-center items-center space-x-4 text-sm md:text-base tracking-widest uppercase font-medium">
                     <span className="text-[#2F3A8F]">Connect</span>
                     <span className="text-[#B08968]">•</span>
@@ -75,7 +75,7 @@ const Volunteer = () => {
                     <span className="text-[#B08968]">•</span>
                     <span className="text-[#2F3A8F]">Transcend</span>
                 </div>
-            </motion.p>
+            </motion.div>
         </div>
 
         {/* --- Cards Section --- */}

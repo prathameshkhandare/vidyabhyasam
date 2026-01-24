@@ -46,7 +46,7 @@ const PurposeVision = () => {
           
           {/* Goal & Visuals */}
           <div className="relative">
-             <div className="relative z-10 bg-white p-10 rounded-2xl shadow-xl border border-[#B08968]/20 text-center">
+             <div className="relative z-10 bg-white p-10 rounded-2xl shadow-xl text-center">
                 <div className="w-24 h-24 mx-auto mb-6 relative">
                   <Image 
                     src={targetIcon}
@@ -70,8 +70,9 @@ const PurposeVision = () => {
              </div>
              
              {/* Decorative Elements behind card */}
-             <div className="absolute top-4 -right-4 w-full h-full border-2 border-[#2F3A8F]/10 rounded-2xl -z-0" />
-             <div className="absolute -bottom-4 -left-4 w-full h-full border-2 border-[#B08968]/10 rounded-2xl -z-0" />
+             {/* Decorative Elements behind card - Soft Glows */}
+             <div className="absolute top-4 -right-4 w-full h-full bg-gradient-to-bl from-[#2F3A8F]/10 to-transparent rounded-2xl -z-0 blur-sm" />
+             <div className="absolute -bottom-4 -left-4 w-full h-full bg-gradient-to-tr from-[#B08968]/10 to-transparent rounded-2xl -z-0 blur-sm" />
           </div>
           
         </div>

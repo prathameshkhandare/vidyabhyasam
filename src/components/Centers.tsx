@@ -33,6 +33,8 @@ const centers = [
 const Centers = () => {
   return (
     <section className="relative py-28 bg-white overflow-hidden">
+
+
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20">
