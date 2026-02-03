@@ -13,31 +13,31 @@ import stateIcon from '@/assets/images/impact-icon-states.png';
 
 const impactItems = [
   {
-    metric: 70,
+    metric: 9,
     suffix: '',
     label: 'CENTERS',
     description: 'Operational across multiple locations',
     image: centerIcon,
   },
   {
-    metric: 1600,
-    suffix: '+',
+    metric: 92,
+    suffix: '',
     label: 'CHILDREN',
     description: 'Nurtured with food, education & values',
     image: childrenIcon,
   },
   {
-    metric: 1000,
+    metric: 108,
     suffix: '',
     label: 'VILLAGES',
-    description: 'Goal to reach by the year 2030',
+    description: 'Goal to reach by the year 2026',
     image: villageIcon,
   },
   {
-    metric: 3,
+    metric: 108,
     suffix: '',
-    label: 'STATES',
-    description: 'Telangana, Andhra Pradesh & more',
+    label: 'TEACHERS',
+    description: 'Trained educators by 2026',
     image: stateIcon,
   },
 ];
@@ -112,7 +112,7 @@ const Impact = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-[#5F6368] max-w-3xl mx-auto text-lg leading-relaxed"
           >
-            VIDYABHYASAM is currently operational across 70 centres nurturing 1600+ children. Farther away, the program has entered the lives of Chenchu tribes of the Nallamalla forests and slums of Hyderabad and many villages in Telangana and Andhra Pradesh.
+            VIDYABHYASAM is currently operational across 9 centers nurturing 92 children. Our immediate vision is to expand to 108 villages and train 108 teachers by 2026, creating a scalable, community-driven model for holistic education.
           </motion.p>
         </div>
         

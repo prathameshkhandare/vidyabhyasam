@@ -6,31 +6,59 @@ import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 
 const centers = [
   {
-    name: 'Neelankarai',
-    location: 'Chennai, Tamil Nadu',
-    image: '/images/centers/neelankarai-1.jpg',
-    description: 'A vibrant center of learning and growth.',
+    name: 'Kottivakkam',
+    location: 'Chennai Region',
+    image: '/images/centers/kotivakkam-1.jpg',
+    description: 'Empowering children with holistic education at our primary home center.',
     color: '#B08968'
+  },
+  {
+    name: 'Chinna Neelankarai',
+    location: 'Chennai Region',
+    image: '/images/centers/neelankarai-1.jpg',
+    description: 'Nurturing growth and learning in the heart of Neelankarai.',
+    color: '#2F3A8F'
   },
   {
     name: 'Venkatamangalam',
     location: 'Kanchipuram District',
     image: '/images/centers/venkatamangalam-1.jpg',
-    description: 'Nurturing young minds in a serene environment.',
-    color: '#2F3A8F'
-  },
-  {
-    name: 'Kotivakkam',
-    location: 'Chennai Region',
-    image: '/images/centers/kotivakkam-1.jpg',
-    description: 'Empowering children with holistic education.',
+    description: 'Fostering academic excellence in a peaceful environment.',
     color: '#B08968'
   },
   {
     name: 'Murugamangalam',
     location: 'Rural Community',
     image: '/images/centers/murugamangalam-1.jpg',
-    description: 'Building strong foundations for the future.',
+    description: 'Building strong character and foundations for rural children.',
+    color: '#2F3A8F'
+  },
+  {
+    name: 'Morai (Avadi)',
+    location: 'Chennai Region',
+    image: '/images/centers/neelankarai-2.jpg',
+    description: 'Expanding our reach to support the community in Morai.',
+    color: '#B08968'
+  },
+  {
+    name: 'Perungulathur',
+    location: 'Chennai Region',
+    image: '/images/centers/kotivakkam-2.jpg',
+    description: 'Dedicated to providing quality education and values.',
+    color: '#2F3A8F'
+  },
+  {
+    name: 'Nallambakkam',
+    location: 'Chennai Region',
+    image: '/images/centers/venkatamangalam-1.jpg',
+    description: 'Creating a brighter future for the children of Nallambakkam.',
+    color: '#B08968'
+  },
+  {
+    name: 'Palnankuppam',
+    location: 'Chennai Region',
+    image: '/images/centers/kotivakkam-3.jpg',
+    description: 'Impacting lives through holistic development and care.',
     color: '#2F3A8F'
   }
 ];
@@ -61,10 +89,10 @@ const Card = ({
       <motion.div
         style={{
           scale,
-          top: `calc(10vh + ${i * 20}px)`, // Added a small staggered gap as requested
-          zIndex: (centers.length + i) * 10, // Higher specificity z-index
+          top: `calc(10vh + ${i * 30}px)`, // Increased stagger for better visibility
+          zIndex: (centers.length + i) * 10,
         }}
-        className="relative h-[450px] md:h-[550px] w-full max-w-5xl rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] origin-top mx-4 md:mx-6 border border-white/10 bg-[#0F172A]"
+        className="relative h-[480px] md:h-[580px] w-full max-w-5xl rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] origin-top mx-4 md:mx-6 border border-white/10 bg-[#0F172A]"
       >
          {/* Original Card Design Structure: Image Background + Overlay */}
          <div className="absolute inset-0">
@@ -120,7 +148,7 @@ const Centers = () => {
 
       <div className="mt-2 pb-4">
         {centers.map((center, i) => {
-          const targetScale = 1 - ((centers.length - i) * 0.08);
+          const targetScale = 1 - ((centers.length - i) * 0.03);
           return (
             <Card
               key={i}

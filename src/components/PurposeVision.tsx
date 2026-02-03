@@ -55,10 +55,10 @@ const PurposeVision = () => {
                     className="object-contain"
                   />
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-[#2E2E33] mb-2">Our Vision 2030</h3>
+                <h3 className="font-serif text-2xl font-bold text-[#2E2E33] mb-2">Our Vision 2026</h3>
                 <div className="w-16 h-px bg-[#B08968] mx-auto my-6" />
                 <p className="text-xl text-[#374151] mb-8 font-light">
-                  To reach <strong className="text-[#2F3A8F] font-semibold">1000 villages</strong> by the year 2030.
+                  To reach <strong className="text-[#2F3A8F] font-semibold">108 villages</strong> and <strong className="text-[#3A7F7A] font-semibold">1000+ children</strong> by the year 2026.
                 </p>
                 
                 <Link 
