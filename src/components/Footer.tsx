@@ -9,8 +9,9 @@ const Footer = () => {
     explore: [
       { name: 'About Us', href: '/about' },
       { name: 'Our Inspiration', href: '/about/inspiration' },
-      { name: 'Our Trust', href: '/about/trust' },
-      { name: 'Governance', href: '/about/governance' },
+      { name: 'Leadership', href: '/about/leadership' },
+      // { name: 'Our Trust', href: '/about/trust' },
+      // { name: 'Governance', href: '/about/governance' },
     ],
     initiatives: [
       { name: 'Food', href: '/initiatives/food' },
@@ -83,7 +84,7 @@ const Footer = () => {
                   </div>
                   <div className="flex flex-col min-w-0">
                     <h3 className="font-serif text-2xl sm:text-3xl font-bold leading-none tracking-tight italic" style={{ color: '#FACC15' }}>Vidyabhyasam</h3>
-                    <p className="font-serif text-[10px] tracking-[0.2em] sm:tracking-[0.25em] uppercase font-bold mt-1 italic" style={{ color: 'white' }}>Enriching Communities</p>
+                    <p className="font-serif text-[10px] tracking-[0.2em] sm:tracking-[0.25em] uppercase font-bold mt-1 italic" style={{ color: 'white' }}>Educating. Culturing. Nourishing.</p>
                   </div>
                 </div>
               </Link>

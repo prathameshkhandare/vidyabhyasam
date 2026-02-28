@@ -51,13 +51,10 @@ export default function Inspiration() {
 
                                 <div className="space-y-6 text-[#374151] font-serif leading-relaxed text-lg pb-8">
                                     <p>
-                                        ISKCON widely known as Hare Krishna Movement is a worldwide confederation of more than 850 temples, centres, communities, schools, and restaurants with a global following of millions.
+                                        ISKCON widely known as Hare Krishna Movement was founded by His Divine Grace A. C. Bhaktivedanta Swami Prabhupada, affectionately known among devotees as Śrīla Prabhupāda. A divine personality of many facets and extraordinary depth, he has been described at various times as a scholar, philosopher, cultural ambassador, prolific author, social critic, and saintly teacher. In truth, he embodied all these qualities and infinitely more.
                                     </p>
                                     <p>
-                                        Established in 1966, His Divine Grace A.C. Bhaktivedanta Swami Prabhupada brought the ancient Vedic wisdom to the modern world, translating and commenting on over 80 volumes of classical Vedic literature including the Bhagavad-gita and Srimad Bhagavatam.
-                                    </p>
-                                    <p>
-                                        His teachings continue to inspire millions globally to lead a life of devotion, compassion, and selfless service, forming the foundational inspiration for all our community enrichment programs.
+                                        On his divine order, Hare Krishna Movement carries out large-scale food distribution programs with the support of respective governments and CSR partnerships from corporates, serving society with compassion, dedication, and spiritual vision.
                                     </p>
                                 </div>
                             </Reveal>

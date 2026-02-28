@@ -42,27 +42,27 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-[#2E2E33] leading-tight mb-8 tracking-tight relative z-10 w-full max-w-2xl mx-auto lg:mx-0 lg:pr-4 xl:pr-8">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-[#2E2E33] leading-tight mb-8 tracking-tight relative z-10 w-full max-w-2xl mx-auto lg:mx-0 lg:pr-8 xl:pr-12">
               Enriching communities with{' '}
-              <span className="text-[#2F3A8F] relative inline-block mt-2">
+              <span className="text-[#2F3A8F] relative inline-flex whitespace-nowrap mt-2 items-center text-[0.85em]">
                 <span className="relative z-10 font-bold inline">
                   Food
                 </span>
 
-                <span className="text-[#B08968] font-light mx-2 sm:mx-3">,</span>
+                <span className="text-[#B08968] font-light mx-1.5 sm:mx-2">,</span>
 
                 <span className="relative z-10 font-bold inline">
                   Education
                 </span>
 
-                <span className="text-[#B08968] font-light mx-2 sm:mx-3">&</span>
+                <span className="text-[#B08968] font-light mx-1.5 sm:mx-2">&</span>
 
                 <span className="relative z-10 font-bold inline">
                   Values
                 </span>
 
                 {/* Underline Decoration */}
-                <div className="absolute bottom-1 lg:bottom-2 left-0 w-full h-2 lg:h-3 bg-[#B08968]/20 -z-0 skew-x-12" />
+                <div className="absolute bottom-0 left-0 w-full h-2 lg:h-3 bg-[#B08968]/20 -z-0 skew-x-12" />
               </span>
             </h1>
 
