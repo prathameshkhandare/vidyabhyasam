@@ -31,7 +31,7 @@ const Header = () => {
     },
     { name: 'Our Impact', href: '/impact' },
     { name: 'Gallery', href: '/gallery' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Contact', href: '#footer' },
   ];
 
   return (
@@ -76,6 +76,12 @@ const Header = () => {
                   <Link
                     href={item.href}
                     className="py-2 text-[#374151] hover:text-[#2F3A8F] text-sm font-bold font-sans uppercase tracking-wide transition-colors flex items-center gap-1 whitespace-nowrap"
+                    onClick={(e) => {
+                      if (item.href.startsWith('#')) {
+                        e.preventDefault();
+                        document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
                   >
                     {item.name}
                     {item.dropdown && (
@@ -153,7 +159,13 @@ const Header = () => {
               <Link
                 href={item.href}
                 className="text-lg font-serif font-medium text-[#2E2E33] block mb-2"
-                onClick={() => !item.dropdown && setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  if (!item.dropdown) setIsMobileMenuOpen(false);
+                  if (item.href.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 {item.name}
               </Link>
