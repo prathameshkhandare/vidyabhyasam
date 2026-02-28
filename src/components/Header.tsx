@@ -24,9 +24,9 @@ const Header = () => {
       href: '/about',
       dropdown: [
         { name: 'Our Inspiration', href: '/about/inspiration' },
-        { name: 'Our Trust', href: '/about/trust' },
+        // { name: 'Our Trust', href: '/about/trust' },
         { name: 'Leadership', href: '/about/leadership' },
-        { name: 'Governance', href: '/about/governance' }
+        // { name: 'Governance', href: '/about/governance' }
       ]
     },
     { name: 'Our Impact', href: '/impact' },
@@ -58,14 +58,14 @@ const Header = () => {
                 <span className="font-serif text-2xl font-bold text-[#2E2E33] leading-none tracking-tight group-hover:text-[#2F3A8F] transition-colors">
                   Vidyabhyasam
                 </span>
-                <span className="font-sans text-[10px] text-[#374151] tracking-widest uppercase mt-1 font-semibold">
-                  Enriching communities
+                <span className="font-sans text-[8px] lg:text-[9px] text-[#374151] tracking-wider uppercase mt-1 font-semibold whitespace-nowrap">
+                  Educating. Culturing. Nourishing.
                 </span>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-4 xl:gap-6">
               {navItems.map((item) => (
                 <div
                   key={item.name}
@@ -75,7 +75,7 @@ const Header = () => {
                 >
                   <Link
                     href={item.href}
-                    className="py-2 text-[#374151] hover:text-[#2F3A8F] text-sm font-bold font-sans uppercase tracking-wide transition-colors flex items-center gap-1"
+                    className="py-2 text-[#374151] hover:text-[#2F3A8F] text-sm font-bold font-sans uppercase tracking-wide transition-colors flex items-center gap-1 whitespace-nowrap"
                   >
                     {item.name}
                     {item.dropdown && (

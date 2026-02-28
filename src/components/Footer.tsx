@@ -9,8 +9,9 @@ const Footer = () => {
     explore: [
       { name: 'About Us', href: '/about' },
       { name: 'Our Inspiration', href: '/about/inspiration' },
-      { name: 'Our Trust', href: '/about/trust' },
-      { name: 'Governance', href: '/about/governance' },
+      { name: 'Leadership', href: '/about/leadership' },
+      // { name: 'Our Trust', href: '/about/trust' },
+      // { name: 'Governance', href: '/about/governance' },
     ],
     initiatives: [
       { name: 'Food', href: '/initiatives/food' },
@@ -83,7 +84,7 @@ const Footer = () => {
                   </div>
                   <div className="flex flex-col min-w-0">
                     <h3 className="font-serif text-2xl sm:text-3xl font-bold leading-none tracking-tight italic" style={{ color: '#FACC15' }}>Vidyabhyasam</h3>
-                    <p className="font-serif text-[10px] tracking-[0.2em] sm:tracking-[0.25em] uppercase font-bold mt-1 italic" style={{ color: 'white' }}>Enriching Communities</p>
+                    <p className="font-serif text-[10px] tracking-[0.2em] sm:tracking-[0.25em] uppercase font-bold mt-1 italic" style={{ color: 'white' }}>Educating. Culturing. Nourishing.</p>
                   </div>
                 </div>
               </Link>
@@ -111,7 +112,7 @@ const Footer = () => {
                 <div className="p-2 border border-[#FACC15]/30 text-[#FACC15] group-hover:bg-yellow-400 group-hover:text-[#0F172A] transition-colors duration-300 flex-shrink-0">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
-                <a href="mailto:connect@vidyabhyasam.org" className="hover:text-white transition-colors text-sm break-all">connect@vidyabhyasam.org</a>
+                <a href="mailto:connect@vidyabhyasam.org" className="hover:text-white transition-colors text-sm break-all">bkrd@hkmchennai.org</a>
               </motion.div>
               <motion.div
                 className="flex items-center gap-3 group"
@@ -120,7 +121,7 @@ const Footer = () => {
                 <div className="p-2 border border-[#FACC15]/30 text-[#FACC15] group-hover:bg-yellow-400 group-hover:text-[#0F172A] transition-colors duration-300 flex-shrink-0">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                 </div>
-                <a href="tel:+917386898991" className="hover:text-white transition-colors text-sm">+91 73868 98991</a>
+                <a href="tel:+917386898991" className="hover:text-white transition-colors text-sm">+91-9790972034</a>
               </motion.div>
             </div>
 

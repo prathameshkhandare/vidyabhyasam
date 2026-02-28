@@ -35,13 +35,10 @@ export default function Leadership() {
 
                                 <div className="space-y-6 text-[#374151] font-serif leading-relaxed text-lg pb-8">
                                     <p>
-                                        With a robust background in mechanical engineering, His Grace Suvyakta Narasimha Dasa brings a wealth of both technical expertise and profound spiritual leadership to his role.
+                                        His Grace Suvyakta Narasimha Dasa was born in 1973 in Moovattupuzha in Kerala. He completed B.E. (Mechanical) from M S Ramaiah Institute of Technology and secured 5th rank in Bangalore University. After graduation, he worked in Lincoln Helios India Ltd. as a Design Engineer. After becoming a full-time missionary of ISKCON Bangalore in 1999, he has been dedicating his skills and expertise for the welfare of society.
                                     </p>
                                     <p>
-                                        His dedicated efforts have been instrumental in leading massive developmental projects, including his extensive work with the Akshaya Patra foundation, where he played a pivotal role in implementing large-scale programmatic operations that feed millions of children daily.
-                                    </p>
-                                    <p>
-                                        Under his guidance, Vidyabhyasam continues to expand its reach, ensuring that education, nutrition, and essential values are imparted effectively to underprivileged communities.
+                                        Suvyakta Narasimha Dasa successfully designed and operationalised Akshaya Patra’s centralised kitchens in Vrindavan, Lucknow, Jaipur and other locations. He has been instrumental in the setting up of the sprawling Vrindavan Chandrodaya Mandir campus. He is currently serving as President of Srila Prabhupada's ISKCON Chennai (Hare Krishna Movement, Chennai- Affiliate of ISKCON: S-49/78-79, Bengaluru) and also overseeing the operations of Akshaya Patra in Tamil Nadu.
                                     </p>
                                 </div>
                             </Reveal>
