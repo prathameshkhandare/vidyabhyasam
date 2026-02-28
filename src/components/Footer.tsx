@@ -55,7 +55,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-gradient-to-b from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white overflow-hidden pt-20 pb-10 border-t-4 border-[#D4AF37] rounded-none">
+    <footer id="footer" className="relative bg-gradient-to-b from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white overflow-hidden pt-20 pb-10 border-t-4 border-[#D4AF37] rounded-none">
       {/* Decorative Corner Flourishes - REMOVED for sharp aesthetic */}
 
       {/* Central Glow Spot */}
