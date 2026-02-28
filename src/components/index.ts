@@ -10,3 +10,4 @@ export { default as Footer } from './Footer';
 export { default as PurposeVision } from './PurposeVision';
 export { default as Centers } from './Centers';
 export { Reveal } from './Reveal';
+export { default as WomenEmpowerment } from './WomenEmpowerment';

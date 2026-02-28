@@ -4,13 +4,12 @@ import {
   About,
   Initiatives,
   Impact,
-  Media,
-  Volunteer,
   Gallery,
   Footer,
   Reveal,
   PurposeVision,
   Centers,
+  WomenEmpowerment,
 } from "@/components";
 
 export default function Home() {
@@ -22,10 +21,9 @@ export default function Home() {
         <Reveal><About /></Reveal> {/* Mission Snapshot */}
         <Reveal><Impact /></Reveal>
         <Reveal><Initiatives /></Reveal>
+        <Reveal><WomenEmpowerment /></Reveal>
         <Reveal><PurposeVision /></Reveal>
-        <Reveal><Media /></Reveal> {/* Video & Testimonials */}
         <Centers />
-        <Reveal><Volunteer /></Reveal>
         <Reveal><Gallery /></Reveal>
       </main>
       <Footer />

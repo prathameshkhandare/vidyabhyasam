@@ -1,8 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
 import Image from 'next/image';
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const centers = [
   {
@@ -63,103 +62,69 @@ const centers = [
   }
 ];
 
-const Card = ({
-  i,
-  center,
-  progress,
-  range,
-  targetScale,
-}: {
-  i: number;
-  center: any;
-  progress: MotionValue<number>;
-  range: number[];
-  targetScale: number;
-}) => {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start end', 'start start']
-  });
-
-  const scale = useTransform(progress, range, [1, targetScale]);
-  
-  return (
-    <div ref={container} className="h-[50vh] flex items-center justify-center sticky top-0">
-      <motion.div
-        style={{
-          scale,
-          top: `calc(10vh + ${i * 30}px)`, // Increased stagger for better visibility
-          zIndex: (centers.length + i) * 10,
-        }}
-        className="relative h-[480px] md:h-[580px] w-full max-w-5xl rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] origin-top mx-4 md:mx-6 border border-white/10 bg-[#0F172A]"
-      >
-         {/* Original Card Design Structure: Image Background + Overlay */}
-         <div className="absolute inset-0">
-           <Image 
-             src={center.image} 
-             alt={center.name}
-             fill
-             className="object-cover transition-transform duration-1000 group-hover:scale-105"
-           />
-           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-black/40 to-transparent opacity-95 transition-opacity duration-300" />
-         </div>
-         
-         {/* Content Overlay */}
-         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-10 text-white" >
-            <motion.span 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-[#FFD700] text-sm font-bold uppercase tracking-[0.2em] mb-4 block drop-shadow-md"
-            >
-              {center.location}
-            </motion.span>
-            <h3 className="font-serif text-3xl md:text-5xl font-bold mb-6 !text-white leading-tight">{center.name}</h3>
-            <p className="text-white/80 text-base md:text-xl leading-relaxed max-w-2xl font-light">
-              {center.description}
-            </p>
-         </div>
-      </motion.div>
-    </div>
-  );
-};
-
 const Centers = () => {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start start', 'end end']
-  });
-
   return (
-    <section className="relative bg-[#F4F1EC] pb-6" ref={container}>
-      <div className="pt-8 px-6 max-w-7xl mx-auto text-center mb-2">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-8 h-px bg-[#B08968]" />
-            <span className="text-[#B08968] text-xs font-medium tracking-[0.25em] uppercase">
-              Our Locations
-            </span>
-            <div className="w-8 h-px bg-[#B08968]" />
-          </div>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium text-[#2E2E33]">
-            Our <span className="italic text-[#2F3A8F]">Centers</span>
-          </h2>
+    <section className="relative bg-[#F4F1EC] pt-12 pb-24">
+      <div className="px-6 max-w-7xl mx-auto text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center justify-center gap-3 mb-4"
+        >
+          <div className="w-8 h-px bg-[#B08968]" />
+          <span className="text-[#B08968] text-xs font-medium tracking-[0.25em] uppercase">
+            Our Locations
+          </span>
+          <div className="w-8 h-px bg-[#B08968]" />
+        </motion.div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="font-serif text-4xl md:text-5xl font-medium text-[#2E2E33]"
+        >
+          Our <span className="italic text-[#2F3A8F]">Centers</span>
+        </motion.h2>
       </div>
 
-      <div className="mt-2 pb-4">
-        {centers.map((center, i) => {
-          const targetScale = 1 - ((centers.length - i) * 0.03);
-          return (
-            <Card
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {centers.map((center, i) => (
+            <motion.div
               key={i}
-              i={i}
-              center={center}
-              progress={scrollYProgress}
-              range={[i * 0.25, 1]}
-              targetScale={targetScale}
-            />
-          );
-        })}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: (i % 3) * 0.15 }}
+              className="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
+            >
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <Image
+                  src={center.image}
+                  alt={center.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+
+              <div className="p-8 flex-1 flex flex-col">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] mb-3 block" style={{ color: center.color }}>
+                  {center.location}
+                </span>
+                <h3 className="font-serif text-2xl font-bold mb-3 text-[#2E2E33] leading-tight group-hover:text-[#2F3A8F] transition-colors">
+                  {center.name}
+                </h3>
+                <p className="text-[#5F6368] text-sm leading-relaxed font-light mt-auto">
+                  {center.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

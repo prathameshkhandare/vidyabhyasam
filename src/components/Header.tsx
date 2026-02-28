@@ -19,9 +19,9 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { 
-      name: 'About Us', 
-      href: '/about', 
+    {
+      name: 'About Us',
+      href: '/about',
       dropdown: [
         { name: 'Our Inspiration', href: '/about/inspiration' },
         { name: 'Our Trust', href: '/about/trust' },
@@ -29,66 +29,30 @@ const Header = () => {
         { name: 'Governance', href: '/about/governance' }
       ]
     },
-    { 
-      name: 'Initiatives', 
-      href: '/initiatives',
-      dropdown: [
-        { name: 'Food', href: '/initiatives/food' },
-        { name: 'Education', href: '/initiatives/education' },
-        { name: 'Values', href: '/initiatives/values' }
-      ]
-    },
     { name: 'Our Impact', href: '/impact' },
-    { name: 'Media', href: '/media' },
-    { name: 'Volunteer', href: '/volunteer' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Contact', href: '/contact' },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
-      {/* Top Contact Bar */}
-      <div className="bg-[#2E2E33] text-[#F4F1EC] py-2 text-xs hidden lg:block transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <a href="mailto:connect@vidyabhyasam.org" className="flex items-center gap-2 hover:text-[#B08968] transition-colors">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-              connect@vidyabhyasam.org
-            </a>
-            <a href="tel:+917386898991" className="flex items-center gap-2 hover:text-[#B08968] transition-colors">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-              +91 73868 98991
-            </a>
-          </div>
-          <div className="flex items-center gap-4">
-            {/* Social Icons Placeholder */}
-            {['Instagram', 'Facebook', 'YouTube', 'Twitter'].map(social => (
-              <a key={social} href="#" className="hover:text-[#B08968] transition-colors" aria-label={social}>
-                 <span className="text-xs font-serif">{social}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation */}
-      <div className={`w-full transition-all duration-500 border-b border-[#2E2E33]/5 ${
-         isScrolled 
-           ? 'bg-[#F4F1EC] backdrop-blur-md shadow-md py-2' 
-           : 'bg-[#F4F1EC] py-4'
-       }`}>
+      <div className={`w-full transition-all duration-500 border-b border-[#2E2E33]/5 ${isScrolled
+        ? 'bg-[#F4F1EC] backdrop-blur-md shadow-md py-2'
+        : 'bg-[#F4F1EC] py-4'
+        }`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-4 group">
-              <div className="relative w-12 h-12 lg:w-16 lg:h-16 transition-transform duration-300 group-hover:scale-105">
-                 <Image 
-                   src="/images/vidyabhyasam-logo.png" 
-                   alt="Vidyabhyasam Logo" 
-                   fill
-                   className="object-contain drop-shadow-sm"
-                   priority
-                 />
+              <div className="relative w-32 h-12 lg:w-40 lg:h-16 transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/images/vidyabhyasam-logo.png"
+                  alt="Vidyabhyasam Logo"
+                  fill
+                  className="object-contain drop-shadow-sm"
+                  priority
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-2xl font-bold text-[#2E2E33] leading-none tracking-tight group-hover:text-[#2F3A8F] transition-colors">
@@ -103,13 +67,13 @@ const Header = () => {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-6">
               {navItems.map((item) => (
-                <div 
-                  key={item.name} 
+                <div
+                  key={item.name}
                   className="relative group"
                   onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <Link 
+                  <Link
                     href={item.href}
                     className="py-2 text-[#374151] hover:text-[#2F3A8F] text-sm font-bold font-sans uppercase tracking-wide transition-colors flex items-center gap-1"
                   >
@@ -121,13 +85,12 @@ const Header = () => {
 
                   {/* Dropdown */}
                   {item.dropdown && (
-                    <div className={`absolute top-full left-0 w-48 bg-white shadow-xl rounded-b-md overflow-hidden transition-all duration-300 transform origin-top ${
-                      activeDropdown === item.name ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 pointer-events-none'
-                    }`}>
+                    <div className={`absolute top-full left-0 w-48 bg-white shadow-xl rounded-b-md overflow-hidden transition-all duration-300 transform origin-top ${activeDropdown === item.name ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 pointer-events-none'
+                      }`}>
                       <div className="py-2 border-t-2 border-[#2F3A8F]">
                         {item.dropdown.map(subItem => (
-                          <Link 
-                            key={subItem.name} 
+                          <Link
+                            key={subItem.name}
                             href={subItem.href}
                             className="block px-4 py-2 text-sm text-[#5F6368] hover:bg-[#F4F1EC] hover:text-[#2F3A8F] transition-colors font-serif"
                           >
@@ -141,20 +104,31 @@ const Header = () => {
               ))}
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden lg:block">
-              <a 
-                href="https://aikyavidya.org/donations/" 
-                target="_blank" 
+            {/* CTA Button & ISKCON Logo */}
+            <div className="hidden lg:flex items-center gap-6">
+              <a
+                href="https://rzp.io/rzp/elVh3Icr"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
               >
                 Donate Now
               </a>
+
+              <div className="relative w-36 h-12 lg:w-48 lg:h-16 flex items-center justify-center">
+                <Image
+                  src="/images/iskcon-logo-main.webp"
+                  alt="ISKCON Chennai Logo"
+                  fill
+                  className="object-contain scale-[1.3] hover:scale-[1.4] transition-transform duration-300 origin-center"
+                  sizes="(max-width: 1024px) 144px, 192px"
+                  priority
+                />
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="lg:hidden p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
@@ -171,14 +145,13 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden bg-white/95 backdrop-blur-md absolute top-[100px] left-0 w-full shadow-xl transition-all duration-300 origin-top overflow-y-auto ${
-        isMobileMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
-      }`}>
+      <div className={`lg:hidden bg-white/95 backdrop-blur-md absolute top-[100px] left-0 w-full shadow-xl transition-all duration-300 origin-top overflow-y-auto ${isMobileMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
+        }`}>
         <div className="p-6 space-y-4">
           {navItems.map((item) => (
             <div key={item.name}>
-              <Link 
-                href={item.href} 
+              <Link
+                href={item.href}
                 className="text-lg font-serif font-medium text-[#2E2E33] block mb-2"
                 onClick={() => !item.dropdown && setIsMobileMenuOpen(false)}
               >
@@ -200,9 +173,9 @@ const Header = () => {
               )}
             </div>
           ))}
-          <a 
-            href="https://aikyavidya.org/donations/"
-            target="_blank" 
+          <a
+            href="https://rzp.io/rzp/elVh3Icr"
+            target="_blank"
             rel="noopener noreferrer"
             className="block w-full text-center btn-primary"
             onClick={() => setIsMobileMenuOpen(false)}
