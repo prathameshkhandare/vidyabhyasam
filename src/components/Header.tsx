@@ -43,22 +43,40 @@ const Header = () => {
         }`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <nav className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-4 group">
-              <div className="relative w-32 h-12 lg:w-40 lg:h-16 transition-transform duration-300 group-hover:scale-105">
-                <Image
-                  src="/images/vidyabhyasam-logo.png"
-                  alt="Vidyabhyasam Logo"
-                  fill
-                  className="object-contain drop-shadow-sm"
-                  priority
-                />
+            {/* Logos */}
+            <Link href="/" className="flex items-center gap-4 lg:gap-6 group">
+              <div className="flex items-center gap-3 lg:gap-4">
+                {/* Vidyabhyasam Logo */}
+                <div className="relative w-10 h-10 lg:w-14 lg:h-14 transition-transform duration-300 group-hover:scale-105">
+                  <Image
+                    src="/images/vidyabhyasam-logo.png"
+                    alt="Vidyabhyasam Logo"
+                    fill
+                    className="object-contain drop-shadow-sm"
+                    priority
+                  />
+                </div>
+
+
+                {/* ISKCON Logo */}
+                <div className="relative w-28 h-8 sm:w-40 sm:h-10 lg:w-52 lg:h-12 overflow-hidden">
+                  <Image
+                    src="/images/iskcon-logo-main.webp"
+                    alt="ISKCON Chennai Logo"
+                    fill
+                    className="object-contain scale-[1.65] hover:scale-[1.7] transition-transform duration-300 origin-center"
+                    sizes="(max-width: 640px) 112px, (max-width: 1024px) 160px, 208px"
+                    priority
+                  />
+                </div>
               </div>
+
+              {/* Vidyabhyasam Name */}
               <div className="flex flex-col">
-                <span className="font-serif text-2xl font-bold text-[#2E2E33] leading-none tracking-tight group-hover:text-[#2F3A8F] transition-colors">
+                <span className="font-serif text-xl lg:text-2xl font-bold text-[#2E2E33] leading-none tracking-tight group-hover:text-[#2F3A8F] transition-colors">
                   Vidyabhyasam
                 </span>
-                <span className="font-sans text-[8px] lg:text-[9px] text-[#374151] tracking-wider uppercase mt-1 font-semibold whitespace-nowrap">
+                <span className="font-sans text-[7px] lg:text-[8px] text-[#374151] tracking-wider uppercase mt-1 font-semibold whitespace-nowrap">
                   Educating. Culturing. Nourishing.
                 </span>
               </div>
@@ -110,7 +128,7 @@ const Header = () => {
               ))}
             </div>
 
-            {/* CTA Button & ISKCON Logo */}
+            {/* CTA Button */}
             <div className="hidden lg:flex items-center gap-6">
               <a
                 href="https://rzp.io/rzp/elVh3Icr"
@@ -120,17 +138,6 @@ const Header = () => {
               >
                 Donate Now
               </a>
-
-              <div className="relative w-36 h-12 lg:w-48 lg:h-16 flex items-center justify-center">
-                <Image
-                  src="/images/iskcon-logo-main.webp"
-                  alt="ISKCON Chennai Logo"
-                  fill
-                  className="object-contain scale-[1.3] hover:scale-[1.4] transition-transform duration-300 origin-center"
-                  sizes="(max-width: 1024px) 144px, 192px"
-                  priority
-                />
-              </div>
             </div>
 
             {/* Mobile Menu Button */}
