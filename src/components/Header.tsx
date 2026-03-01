@@ -47,7 +47,7 @@ const Header = () => {
             <Link href="/" className="flex items-center gap-3 lg:gap-4 group">
               <div className="flex items-center gap-2 lg:gap-3">
                 {/* Vidyabhyasam Logo */}
-                <div className="relative w-10 h-10 lg:w-14 lg:h-14 transition-transform duration-300 group-hover:scale-105">
+                <div className="relative w-14 h-14 lg:w-20 lg:h-20 transition-transform duration-300 group-hover:scale-[1.1]">
                   <Image
                     src="/images/vidyabhyasam-logo.png"
                     alt="Vidyabhyasam Logo"
