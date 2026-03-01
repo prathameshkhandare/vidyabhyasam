@@ -44,8 +44,8 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <nav className="flex items-center justify-between">
             {/* Logos */}
-            <Link href="/" className="flex items-center gap-4 lg:gap-6 group">
-              <div className="flex items-center gap-3 lg:gap-4">
+            <Link href="/" className="flex items-center gap-3 lg:gap-4 group">
+              <div className="flex items-center gap-2 lg:gap-3">
                 {/* Vidyabhyasam Logo */}
                 <div className="relative w-10 h-10 lg:w-14 lg:h-14 transition-transform duration-300 group-hover:scale-105">
                   <Image
@@ -59,15 +59,17 @@ const Header = () => {
 
 
                 {/* ISKCON Logo */}
-                <div className="relative w-28 h-8 sm:w-40 sm:h-10 lg:w-52 lg:h-12 overflow-hidden">
-                  <Image
-                    src="/images/iskcon-logo-main.webp"
-                    alt="ISKCON Chennai Logo"
-                    fill
-                    className="object-contain scale-[1.65] hover:scale-[1.7] transition-transform duration-300 origin-center"
-                    sizes="(max-width: 640px) 112px, (max-width: 1024px) 160px, 208px"
-                    priority
-                  />
+                <div className="relative w-32 h-10 sm:w-40 sm:h-11 lg:w-48 lg:h-12 overflow-hidden">
+                  <div className="absolute inset-0 scale-[3] origin-center">
+                    <Image
+                      src="/images/iskcon-logo-main.webp"
+                      alt="ISKCON Chennai Logo"
+                      fill
+                      className="object-contain hover:scale-[1.05] transition-transform duration-300"
+                      sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 192px"
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
 
