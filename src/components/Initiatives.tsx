@@ -27,6 +27,13 @@ const initiatives = [
     image: valuesImg,
     color: '#3A7F7A', // Values - Teal/Growth
     link: '/initiatives/values'
+  },
+  {
+    title: 'Women Empowerment',
+    description: 'Empowering women is central to building stronger communities. Through our dedicated programs, we focus on health education and instilling core values that uplift entire families.',
+    image: '/images/women-empowerment.png',
+    color: '#8C4F66', // Women Empowerment - Rose
+    link: '/initiatives/women-empowerment'
   }
 ];
 
@@ -59,8 +66,8 @@ const Initiatives = () => {
           </p>
         </div>
 
-        {/* Initiative Cards - 3 Columns */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Initiative Cards - 4 Columns */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {initiatives.map((initiative, index) => (
             <div
               key={index}
@@ -93,7 +100,7 @@ const Initiatives = () => {
 
                 {/* Learn More Link (CTA) */}
                 <div>
-                  <Link
+                  {/* <Link
                     href={initiative.link}
                     className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:gap-3"
                     style={{ color: initiative.color }}
@@ -102,7 +109,7 @@ const Initiatives = () => {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
